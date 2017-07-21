@@ -15,11 +15,26 @@ var answerList = []; //initialize answerList to be empty
 /* ADD YOUR CODE BELOW */
 
 //adds user-submitted answer to answerList
-function submitAnswer() {
+function submitAnswer() {                                     //putting answers after clicking the button
+  var answer = document.getElementById("answerInput").value;
+  console.log(answer);
+  answerList.push(answer);
 
 }
 
 //checks if user-submitted guess is in answerList
-function checkGuess() {
+function checkGuess() {                                      //it checks on the second time
+  found=false                                                // if it's not found it would be incorrect
+  var guess = document.getElementById("guessInput").value;
+  console.log(guess);                                        //defining the guess variable
 
+for (var i = 0; i < answerList.length; i++){                //prove to be true or false
+  if (guess == answerList[i]){
+    alert("Wowz You Got It!");
+    found = true;
+  }
+}
+if (found == false){
+  alert("Booo! It's Incorrect~");
+  }
 }
